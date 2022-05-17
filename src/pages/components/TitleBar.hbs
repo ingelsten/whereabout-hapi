@@ -1,0 +1,17 @@
+<div class="box has-text-centered columns m-2">
+  <div class="column">
+    <img src="/images/icons.png" width="60" alt="img"/>
+  </div>
+  <div class="column">
+    <div class="title is-5"> {{title}} </div>
+    <div class="subtitle is-5"> {{subTitle}} </div>
+  </div>
+  <div class="column">
+    <i style="font-size: 48px; color: rgb(255, 139, 30);" class="fas fa-hard-hat"></i>
+    {{#if user}}
+      <div class="is-size-7">{{user.firstName}} {{user.lastName}}</div>
+    {{else}}
+      <div class="is-size-7">Whereabout-Hapi 0.1</div>
+    {{/if}}
+  </div>
+</div>
