@@ -125,3 +125,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+*.wt
+db/diagnostic.data/metrics.2022-05-17T20-05-37Z-00000
+db/diagnostic.data/metrics.interim
+db/journal/WiredTigerLog.0000000001
+db/journal/WiredTigerPreplog.0000000001
+db/journal/WiredTigerPreplog.0000000002
+db/mongod.lock
+db/storage.bson
+db/WiredTiger
+db/WiredTiger.lock
+db/WiredTiger.turtle
