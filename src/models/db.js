@@ -1,6 +1,6 @@
 import { userMongoStore } from "./mongo/user-mongo-store.js";
 import { whereaboutMongoStore } from "./mongo/whereabout-mongo-store.js";
-import { candidateMongoStore } from "./mongo/candidate-mongo-store.js";
+import { employeeMongoStore } from "./mongo/employee-mongo-store.js";
 import { connectMongo } from "./mongo/connect.js";
 
 export const db = {
@@ -11,7 +11,7 @@ export const db = {
       case "mongo":
         this.userStore = userMongoStore;
         this.whereaboutStore = whereaboutMongoStore;
-        this.candidateStore = candidateMongoStore;
+        this.employeeStore = employeeMongoStore;
         connectMongo();
         break;
       default:

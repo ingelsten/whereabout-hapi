@@ -4,8 +4,8 @@ import { imageStore } from "../models/image-store.js";
 export const whereaboutsController = {
   index: {
     handler: async function (request, h) {
-      const candidates = await db.candidateStore.getAllCandidates();
-      return h.view("Donate", { title: "Make a Whereabout", candidates: candidates });
+      const employees = await db.employeeStore.getAllEmployees();
+      return h.view("Donate", { title: "Make a Whereabout", employees: employees });
     },
   },
   report: {
@@ -26,9 +26,9 @@ export const whereaboutsController = {
     handler: async function (request, h) {
       try {
         const loggedInUser = request.auth.credentials;
-        const rawCandidate = request.payload.candidate.split(",");
-        const candidate = await db.candidateStore.findByName(rawCandidate[0], rawCandidate[1]);
-        await db.whereaboutStore.donate(request.payload.amount, request.payload.method, loggedInUser._id, candidate._id);
+        const rawEmployee = request.payload.employee.split(",");
+        const employee = await db.employeeStore.findByName(rawEmployee[0], rawEmployee[1]);
+        await db.whereaboutStore.donate(request.payload.amount, request.payload.method, loggedInUser._id, employee._id);
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });

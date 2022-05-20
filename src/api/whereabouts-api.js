@@ -11,12 +11,12 @@ export const whereaboutsApi = {
       return whereabouts;
     },
   },
-  findByCandidate: {
+  findByEmployee: {
     auth: {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const whereabouts = await db.whereaboutStore.getWhereaboutsByCandidate(request.params.id);
+      const whereabouts = await db.whereaboutStore.getWhereaboutsByEmployee(request.params.id);
       return whereabouts;
     },
   },
@@ -26,15 +26,15 @@ export const whereaboutsApi = {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const candidate = await db.candidateStore.findById(request.params.id);
-      if (!candidate) {
-        return Boom.notFound("No Candidate with this id");
+      const employee = await db.employeeStore.findById(request.params.id);
+      if (!employee) {
+        return Boom.notFound("No Employee with this id");
       }
       const whereabout = await db.whereaboutStore.donate(
           request.payload.amount,
           request.payload.method,
           request.auth.credentials,
-          candidate,
+          employee,
           request.payload.lat,
           request.payload.lng,
       );

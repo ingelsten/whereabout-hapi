@@ -2,10 +2,10 @@ import Mongoose from "mongoose";
 
 const { Schema } = Mongoose;
 
-const candidateSchema = Schema({
+const employeeSchema = Schema({
   firstName: String,
   lastName: String,
   office: String,
 });
 
-export const Candidate = Mongoose.model("Candidate", candidateSchema);
+export const Employee = Mongoose.model("Employee", employeeSchema);

@@ -2,21 +2,21 @@ import { Whereabout } from "./whereabout.js";
 
 export const whereaboutMongoStore = {
   async getAllWhereabouts() {
-    const whereabouts = await Whereabout.find().populate("donor").populate("candidate").lean();
+    const whereabouts = await Whereabout.find().populate("donor").populate("employee").lean();
     return whereabouts;
   },
 
-  async getWhereaboutsByCandidate(id) {
-    const whereabouts = await Whereabout.find({ candidate: id });
+  async getWhereaboutsByEmployee(id) {
+    const whereabouts = await Whereabout.find({ employee: id });
     return whereabouts;
   },
 
-  async donate(amount, method, donor, candidate, lat, lng) {
+  async donate(amount, method, donor, employee, lat, lng) {
     const newWhereabout = new Whereabout({
       amount,
       method,
       donor: donor._id,
-      candidate: candidate._id,
+      employee: employee._id,
       lat,
       lng,
     });

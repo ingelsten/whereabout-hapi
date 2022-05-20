@@ -39,17 +39,17 @@ export const whereaboutService = {
   },
 
   async makeWhereabout(id, whereabout) {
-    const response = await axios.post(`${this.whereaboutUrl}/api/candidates/${id}/whereabouts`, whereabout);
+    const response = await axios.post(`${this.whereaboutUrl}/api/employees/${id}/whereabouts`, whereabout);
     return response.data;
   },
 
   async getWhereabouts(id) {
-    const response = await axios.get(`${this.whereaboutUrl}/api/candidates/${id}/whereabouts`);
+    const response = await axios.get(`${this.whereaboutUrl}/api/employees/${id}/whereabouts`);
     return response.data;
   },
 
-  async createCandidate(newCandidate) {
-    const response = await axios.post(`${this.whereaboutUrl}/api/candidates`, newCandidate);
+  async createEmployee(newEmployee) {
+    const response = await axios.post(`${this.whereaboutUrl}/api/employees`, newEmployee);
     return response.data;
   },
 };

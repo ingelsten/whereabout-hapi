@@ -33,7 +33,7 @@ export const testUsers = [
   },
 ];
 
-export const testCandidates = [
+export const testEmployees = [
   {
     firstName: "Lisa",
     lastName: "Simpson",

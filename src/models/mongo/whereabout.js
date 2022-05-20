@@ -12,9 +12,9 @@ const whereaboutSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  candidate: {
+  employee: {
     type: Schema.Types.ObjectId,
-    ref: "Candidate",
+    ref: "Employee",
   },
 });
 

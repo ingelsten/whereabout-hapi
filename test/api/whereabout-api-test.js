@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { whereaboutService } from "./whereabout-service.js";
-import { maggie, testCandidates, testWhereabouts } from "../fixtures.js";
+import { maggie, testEmployees, testWhereabouts } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
 
 suite("Whereabout API tests", () => {
@@ -16,9 +16,9 @@ suite("Whereabout API tests", () => {
   });
 
   test("create a whereabout", async () => {
-    const returnedCandidate = await whereaboutService.createCandidate(testCandidates[0]);
-    await whereaboutService.makeWhereabout(returnedCandidate._id, testWhereabouts[0]);
-    const returnedWhereabouts = await whereaboutService.getWhereabouts(returnedCandidate._id);
+    const returnedEmployee = await whereaboutService.createEmployee(testEmployees[0]);
+    await whereaboutService.makeWhereabout(returnedEmployee._id, testWhereabouts[0]);
+    const returnedWhereabouts = await whereaboutService.getWhereabouts(returnedEmployee._id);
     console.log(returnedWhereabouts);
     assert.equal(returnedWhereabouts.length, 1);
     assertSubset(returnedWhereabouts[0], testWhereabouts[0]);

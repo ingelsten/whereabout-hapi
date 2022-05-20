@@ -1,14 +1,14 @@
 import Boom from "@hapi/boom";
-import { Candidate } from "../models/mongo/candidate.js";
+import { Employee } from "../models/mongo/employee.js";
 
-export const candidatesApi = {
+export const employeesApi = {
   find: {
     auth: {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const candidates = await Candidate.find();
-      return candidates;
+      const employees = await Employee.find();
+      return employees;
     },
   },
 
@@ -18,13 +18,13 @@ export const candidatesApi = {
     },
     handler: async function (request, h) {
       try {
-        const candidate = await Candidate.findOne({ _id: request.params.id });
-        if (!candidate) {
-          return Boom.notFound("No Candidate with this id");
+        const employee = await Employee.findOne({ _id: request.params.id });
+        if (!employee) {
+          return Boom.notFound("No Employee with this id");
         }
-        return candidate;
+        return employee;
       } catch (err) {
-        return Boom.notFound("No Candidate with this id");
+        return Boom.notFound("No Employee with this id");
       }
     },
   },
@@ -34,12 +34,12 @@ export const candidatesApi = {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const newCandidate = new Candidate(request.payload);
-      const candidate = await newCandidate.save();
-      if (candidate) {
-        return h.response(candidate).code(201);
+      const newEmployee = new Employee(request.payload);
+      const employee = await newEmployee.save();
+      if (employee) {
+        return h.response(employee).code(201);
       }
-      return Boom.badImplementation("error creating candidate");
+      return Boom.badImplementation("error creating employee");
     },
   },
 
@@ -48,7 +48,7 @@ export const candidatesApi = {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      await Candidate.remove({});
+      await Employee.remove({});
       return { success: true };
     },
   },
@@ -58,7 +58,7 @@ export const candidatesApi = {
       strategy: "jwt",
     },
     handler: async function (request, h) {
-      const response = await Candidate.deleteOne({ _id: request.params.id });
+      const response = await Employee.deleteOne({ _id: request.params.id });
       if (response.deletedCount == 1) {
         return { success: true };
       }
