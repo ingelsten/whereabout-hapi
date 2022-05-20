@@ -11,14 +11,14 @@ export const whereaboutMongoStore = {
     return whereabouts;
   },
 
-  async donate(amount, method, donor, employee, lat, lng) {
+  async donate(amount, method, donor, employee, lat, long) {
     const newWhereabout = new Whereabout({
       amount,
       method,
       donor: donor._id,
       employee: employee._id,
       lat,
-      lng,
+      long,
     });
     await newWhereabout.save();
     return newWhereabout;

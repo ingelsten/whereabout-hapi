@@ -6,7 +6,7 @@ const whereaboutSchema = new Schema({
   amount: Number,
   method: String,
   lat: String,
-  lng: String,
+  long: String,
   img: String,
   donor: {
     type: Schema.Types.ObjectId,

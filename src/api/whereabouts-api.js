@@ -36,7 +36,7 @@ export const whereaboutsApi = {
           request.auth.credentials,
           employee,
           request.payload.lat,
-          request.payload.lng,
+          request.payload.long,
       );
       return whereabout;
     },

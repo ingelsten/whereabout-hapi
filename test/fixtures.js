@@ -49,18 +49,18 @@ export const testWhereabouts = [
     amount: 90,
     method: "cash",
     lat: "52.160858",
-    lng: "-7.152420",
+    long: "-7.152420",
   },
   {
     amount: 80,
     method: "cash",
     lat: "52.149220",
-    lng: "-6.994620",
+    long: "-6.994620",
   },
   {
     amount: 50,
     method: "paypal",
     lat: "52.161290",
-    lng: "-7.231540",
+    long: "-7.231540",
   },
 ];
