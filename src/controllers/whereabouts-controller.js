@@ -4,7 +4,7 @@ export const whereaboutsController = {
   index: {
     handler: async function (request, h) {
       const candidates = await db.candidateStore.getAllCandidates();
-      return h.view("Whereabout", { title: "Make a Whereabout", candidates: candidates });
+      return h.view("Donate", { title: "Make a Whereabout", candidates: candidates });
     },
   },
   report: {
@@ -21,13 +21,13 @@ export const whereaboutsController = {
       });
     },
   },
-  whereabout: {
+  donate: {
     handler: async function (request, h) {
       try {
         const loggedInUser = request.auth.credentials;
         const rawCandidate = request.payload.candidate.split(",");
         const candidate = await db.candidateStore.findByName(rawCandidate[0], rawCandidate[1]);
-        await db.whereaboutStore.whereabout(request.payload.amount, request.payload.method, loggedInUser._id, candidate._id);
+        await db.whereaboutStore.donate(request.payload.amount, request.payload.method, loggedInUser._id, candidate._id);
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });
