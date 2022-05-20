@@ -27,4 +27,11 @@ export const whereaboutMongoStore = {
   async deleteAll() {
     await Whereabout.deleteMany({});
   },
+  async updateWhereabout(updatedWhereabout) {
+    const whereabout = await Whereabout.findOne({ _id: updatedWhereabout._id });
+    whereabout.title = updatedWhereabout.title;
+    whereabout.img = updatedWhereabout.img;
+    await whereabout.save();
+  },
+
 };

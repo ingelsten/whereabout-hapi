@@ -13,6 +13,8 @@ export const webRoutes = [
   { method: "POST", path: "/donate", config: whereaboutsController.donate },
   { method: "GET", path: "/report", config: whereaboutsController.report },
 
+  { method: "POST", path: "/report", config: whereaboutsController.uploadImage },
+
   {
     method: "GET",
     path: "/{param*}",

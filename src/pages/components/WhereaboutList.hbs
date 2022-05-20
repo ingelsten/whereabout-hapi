@@ -4,6 +4,7 @@
     <th>Method donated</th>
     <th>Donor</th>
     <th>Candidate</th>
+    <th>Image</th>
   </thead>
   <tbody>
     {{#each whereabouts}}
@@ -12,6 +13,7 @@
         <td>{{method}}</td>
         <td> {{donor.firstName}} {{donor.lastName}} </td>
         <td>{{candidate.lastName}}, {{candidate.firstName}}</td>
+        <td>{{> playlist-image }}</td>
       </tr>
     {{/each}}
   </tbody>
