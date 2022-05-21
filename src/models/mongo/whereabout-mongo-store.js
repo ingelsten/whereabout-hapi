@@ -2,7 +2,7 @@ import { Whereabout } from "./whereabout.js";
 
 export const whereaboutMongoStore = {
   async getAllWhereabouts() {
-    const whereabouts = await Whereabout.find().populate("donor").populate("employee").lean();
+    const whereabouts = await Whereabout.find().populate("user").populate("employee").lean();
     return whereabouts;
   },
 
@@ -11,11 +11,11 @@ export const whereaboutMongoStore = {
     return whereabouts;
   },
 
-  async donate(jobvalue, jobcategory, donor, employee, lat, long) {
+  async donate(jobvalue, jobcategory, user, employee, lat, long) {
     const newWhereabout = new Whereabout({
       jobvalue,
       jobcategory,
-      donor: donor._id,
+      user: user._id,
       employee: employee._id,
       lat,
       long,

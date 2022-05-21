@@ -40,7 +40,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9055",
-      donor: "->users.bart",
+      user: "->users.bart",
       employee: "->employees.lisa",
     },
     two: {
@@ -48,7 +48,7 @@ export const seedData = {
       jobcategory: "civils",
       lat: "51.6223",
       long: "-8.9075",
-      donor: "->users.marge",
+      user: "->users.marge",
       employee: "->employees.lisa",
     },
     three: {
@@ -56,7 +56,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6243",
       long: "-8.9095",
-      donor: "->users.homer",
+      user: "->users.homer",
       employee: "->employees.donald",
     },
     four: {
@@ -64,7 +64,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6263",
       long: "-8.9115",
-      donor: "->users.homer",
+      user: "->users.homer",
       employee: "->employees.donald",
     },
     five: {
@@ -72,7 +72,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9295",
-      donor: "->users.homer",
+      user: "->users.homer",
       employee: "->employees.donald",
     },
   },

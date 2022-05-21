@@ -8,7 +8,7 @@ const whereaboutSchema = new Schema({
   lat: String,
   long: String,
   img: String,
-  donor: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
