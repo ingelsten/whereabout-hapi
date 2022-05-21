@@ -46,19 +46,19 @@ export const testEmployees = [
 
 export const testWhereabouts = [
   {
-    amount: 90,
+    jobvalue: 90,
     method: "cash",
     lat: "52.160858",
     long: "-7.152420",
   },
   {
-    amount: 80,
+    jobvalue: 80,
     method: "cash",
     lat: "52.149220",
     long: "-6.994620",
   },
   {
-    amount: 50,
+    jobvalue: 50,
     method: "paypal",
     lat: "52.161290",
     long: "-7.231540",

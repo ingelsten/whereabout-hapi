@@ -3,7 +3,7 @@ import Mongoose from "mongoose";
 const { Schema } = Mongoose;
 
 const whereaboutSchema = new Schema({
-  amount: Number,
+  jobvalue: Number,
   method: String,
   lat: String,
   long: String,

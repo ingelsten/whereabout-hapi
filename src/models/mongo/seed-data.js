@@ -36,7 +36,7 @@ export const seedData = {
   whereabouts: {
     _model: "Whereabout",
     one: {
-      amount: 40,
+      jobvalue: 40,
       method: "paypal",
       lat: "51.6203",
       long: "-8.9055",
@@ -44,7 +44,7 @@ export const seedData = {
       employee: "->employees.lisa",
     },
     two: {
-      amount: 90,
+      jobvalue: 90,
       method: "direct",
       lat: "51.6223",
       long: "-8.9075",
@@ -52,7 +52,7 @@ export const seedData = {
       employee: "->employees.lisa",
     },
     three: {
-      amount: 430,
+      jobvalue: 430,
       method: "paypal",
       lat: "51.6243",
       long: "-8.9095",
@@ -60,7 +60,7 @@ export const seedData = {
       employee: "->employees.donald",
     },
     four: {
-      amount: 123,
+      jobvalue: 123,
       method: "paypal",
       lat: "51.6263",
       long: "-8.9115",
@@ -68,7 +68,7 @@ export const seedData = {
       employee: "->employees.donald",
     },
     five: {
-      amount: 123,
+      jobvalue: 123,
       method: "paypal",
       lat: "51.6203",
       long: "-8.9295",

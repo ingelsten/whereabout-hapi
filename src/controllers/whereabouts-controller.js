@@ -13,7 +13,7 @@ export const whereaboutsController = {
       const whereabouts = await db.whereaboutStore.getAllWhereabouts();
       let total = 0;
       whereabouts.forEach((whereabout) => {
-        total += whereabout.amount;
+        total += whereabout.jobvalue;
       });
       return h.view("Report", {
         title: "Whereabouts to Date",
@@ -28,7 +28,7 @@ export const whereaboutsController = {
         const loggedInUser = request.auth.credentials;
         const rawEmployee = request.payload.employee.split(",");
         const employee = await db.employeeStore.findByName(rawEmployee[0], rawEmployee[1]);
-        await db.whereaboutStore.donate(request.payload.amount, request.payload.method, loggedInUser._id, employee._id);
+        await db.whereaboutStore.donate(request.payload.jobvalue, request.payload.method, loggedInUser._id, employee._id);
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });

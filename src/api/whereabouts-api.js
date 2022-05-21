@@ -31,7 +31,7 @@ export const whereaboutsApi = {
         return Boom.notFound("No Employee with this id");
       }
       const whereabout = await db.whereaboutStore.donate(
-          request.payload.amount,
+          request.payload.jobvalue,
           request.payload.method,
           request.auth.credentials,
           employee,
