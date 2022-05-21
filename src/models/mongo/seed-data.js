@@ -25,13 +25,19 @@ export const seedData = {
     lisa: {
       firstName: "Lisa",
       lastName: "Simpson",
-      office: "President",
+      office: "Electrician",
     },
     donald: {
       firstName: "Donald",
       lastName: "Simpson",
-      office: "President",
+      office: "General Operative",
     },
+    elwood: {
+      firstName: "Elwood",
+      lastName: "Simpson",
+      office: "Site-Manager",
+    },
+
   },
   whereabouts: {
     _model: "Whereabout",
@@ -65,7 +71,7 @@ export const seedData = {
       lat: "51.6263",
       long: "-8.9115",
       user: "->users.homer",
-      employee: "->employees.donald",
+      employee: "->employees.elwood",
     },
     five: {
       jobvalue: 123,
@@ -73,7 +79,7 @@ export const seedData = {
       lat: "51.6203",
       long: "-8.9295",
       user: "->users.homer",
-      employee: "->employees.donald",
+      employee: "->employees.elwood",
     },
   },
 };
