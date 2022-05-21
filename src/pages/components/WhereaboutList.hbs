@@ -1,8 +1,8 @@
 <table class="table is-fullwidth">
   <thead>
-    <th>Jobvalue</th>
-    <th>Method donated</th>
-    <th>Donor</th>
+    <th>Value of Job</th>
+    <th>Job Category</th>
+    <th>User</th>
     <th>Employee</th>
     <th>Image</th>
   </thead>
@@ -10,7 +10,7 @@
     {{#each whereabouts}}
       <tr>
         <td>{{jobvalue}}</td>
-        <td>{{method}}</td>
+        <td>{{jobcategory}}</td>
         <td> {{donor.firstName}} {{donor.lastName}} </td>
         <td>{{employee.lastName}}, {{employee.firstName}}</td>
         <td>{{> playlist-image }}</td>

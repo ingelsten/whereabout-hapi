@@ -4,7 +4,7 @@ const { Schema } = Mongoose;
 
 const whereaboutSchema = new Schema({
   jobvalue: Number,
-  method: String,
+  jobcategory: String,
   lat: String,
   long: String,
   img: String,

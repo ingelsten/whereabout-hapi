@@ -37,7 +37,7 @@ export const seedData = {
     _model: "Whereabout",
     one: {
       jobvalue: 40,
-      method: "paypal",
+      jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9055",
       donor: "->users.bart",
@@ -45,7 +45,7 @@ export const seedData = {
     },
     two: {
       jobvalue: 90,
-      method: "direct",
+      jobcategory: "civils",
       lat: "51.6223",
       long: "-8.9075",
       donor: "->users.marge",
@@ -53,7 +53,7 @@ export const seedData = {
     },
     three: {
       jobvalue: 430,
-      method: "paypal",
+      jobcategory: "electrical",
       lat: "51.6243",
       long: "-8.9095",
       donor: "->users.homer",
@@ -61,7 +61,7 @@ export const seedData = {
     },
     four: {
       jobvalue: 123,
-      method: "paypal",
+      jobcategory: "electrical",
       lat: "51.6263",
       long: "-8.9115",
       donor: "->users.homer",
@@ -69,7 +69,7 @@ export const seedData = {
     },
     five: {
       jobvalue: 123,
-      method: "paypal",
+      jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9295",
       donor: "->users.homer",

@@ -32,7 +32,7 @@ export const whereaboutsApi = {
       }
       const whereabout = await db.whereaboutStore.donate(
           request.payload.jobvalue,
-          request.payload.method,
+          request.payload.jobcategory,
           request.auth.credentials,
           employee,
           request.payload.lat,

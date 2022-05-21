@@ -28,7 +28,7 @@ export const whereaboutsController = {
         const loggedInUser = request.auth.credentials;
         const rawEmployee = request.payload.employee.split(",");
         const employee = await db.employeeStore.findByName(rawEmployee[0], rawEmployee[1]);
-        await db.whereaboutStore.donate(request.payload.jobvalue, request.payload.method, loggedInUser._id, employee._id);
+        await db.whereaboutStore.donate(request.payload.jobvalue, request.payload.jobcategory, loggedInUser._id, employee._id);
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });
