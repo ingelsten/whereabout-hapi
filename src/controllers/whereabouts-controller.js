@@ -5,7 +5,7 @@ export const whereaboutsController = {
   index: {
     handler: async function (request, h) {
       const employees = await db.employeeStore.getAllEmployees();
-      return h.view("Donate", { title: "Make a Whereabout", employees: employees });
+      return h.view("Addjob", { title: "Make a Whereabout", employees: employees });
     },
   },
   report: {
@@ -22,13 +22,13 @@ export const whereaboutsController = {
       });
     },
   },
-  donate: {
+  addjob: {
     handler: async function (request, h) {
       try {
         const loggedInUser = request.auth.credentials;
         const rawEmployee = request.payload.employee.split(",");
         const employee = await db.employeeStore.findByName(rawEmployee[0], rawEmployee[1]);
-        await db.whereaboutStore.donate(request.payload.jobvalue, request.payload.jobcategory, loggedInUser._id, employee._id, request.payload.lat, request.payload.long );
+        await db.whereaboutStore.addjob(request.payload.jobvalue, request.payload.jobcategory, loggedInUser._id, employee._id, request.payload.lat, request.payload.long );
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });
