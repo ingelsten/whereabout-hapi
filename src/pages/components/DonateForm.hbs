@@ -1,5 +1,6 @@
 <form action="/donate" method="POST">
-  <div class="field">
+
+      <div class="field">
     <label class="label">Enter Jobvalue</label> <input class="input" type="number" placeholder="Euros" name="jobvalue">
   </div>
   <div class="field">
@@ -8,6 +9,12 @@
       <input type="radio" name="jobcategory" value="service"> Service </label>
     </div>
   </div>
+  <div class="field">
+        <input class="input" type="text" placeholder="Enter Lat" name="lat">
+      </div>
+            <div class="field">
+        <input class="input" type="text" placeholder="Enter Long" name="long">
+      </div>
   <div class="field">
     <div class="select">
       <select name="employee">
@@ -19,7 +26,7 @@
   </div>
   <div class="field">
     <div class="control">
-      <button class="button is-link is-light">Donate</button>
+      <button class="button is-warning">Add a new job</button>
     </div>
   </div>
 </form>
