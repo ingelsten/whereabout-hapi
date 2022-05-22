@@ -23,19 +23,19 @@ export const seedData = {
   employees: {
     _model: "Employee",
     lisa: {
-      firstName: "Lisa",
-      lastName: "Simpson",
-      office: "Electrician",
+      firstName: "Adrian",
+      lastName: "Duggan",
+      office: "Clonakilty",
     },
     donald: {
-      firstName: "Donald",
-      lastName: "Simpson",
-      office: "General Operative",
+      firstName: "Brian",
+      lastName: "Nunan",
+      office: "Cork",
     },
     elwood: {
-      firstName: "Elwood",
-      lastName: "Simpson",
-      office: "Site-Manager",
+      firstName: "Peter",
+      lastName: "McCarthy",
+      office: "Listowel",
     },
 
   },
