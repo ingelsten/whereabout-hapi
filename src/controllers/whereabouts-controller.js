@@ -5,7 +5,7 @@ export const whereaboutsController = {
   index: {
     handler: async function (request, h) {
       const employees = await db.employeeStore.getAllEmployees();
-      return h.view("Addjob", { title: "Make a Whereabout", employees: employees });
+      return h.view("addjob", { title: "Make a Whereabout", employees: employees });
     },
   },
   report: {
