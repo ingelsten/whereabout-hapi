@@ -6,12 +6,14 @@ import Handlebars from "handlebars";
 import jwt from "hapi-auth-jwt2";
 import dotenv from "dotenv";
 import path from "path";
+import Joi from "joi";
 import { fileURLToPath } from "url";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { webRoutes } from "./web-routes.js";
 import { apiRoutes } from "./api-routes.js";
 import { db } from "./models/db.js";
 import { validate } from "./api/jwt-utils.js";
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,6 +35,7 @@ async function init() {
   await server.register(Vision);
   await server.register(Cookie);
   await server.register(jwt);
+  server.validator(Joi);
 
   server.views({
     engines: {

@@ -1,7 +1,9 @@
-//import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
+import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
+
+import bcrypt from "bcrypt";
 
 import { db } from "../models/db.js";
-import bcrypt from "bcrypt";
+
 const saltRounds = 10;  
 
 export const accountsController = {
@@ -17,8 +19,14 @@ export const accountsController = {
       return h.view("Signup", { title: "Sign up for Whereabouts" });
     },
   },
-  signup: {
+  signup:{
     auth: false,
+    validate: {
+      payload: UserSpec,
+      failAction: function (request, h, error) {
+        return h.view("Signup", { title: "Sign up error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const user = request.payload;
       user.password = await bcrypt.hash(user.password, saltRounds);    
@@ -34,6 +42,13 @@ export const accountsController = {
   },
   login: {
     auth: false,
+    validate: {
+      payload: UserCredentialsSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("Login", { title: "Log in error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
