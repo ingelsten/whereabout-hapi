@@ -1,7 +1,49 @@
-<form action="/addjob" method="POST">
+ <form action="/addjob" method="POST">
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+  <label class="label">Enter Jobvalue</label><input class="input" type="number" value="123" name="jobvalue">
+  </div>
+  <div class="field">
+  <label class="label">Enter Latitude</label>
+        <input class="input" type="text" value="51.6236" name="lat">
+      </div>
+      <div class="field">
+   <label class="label">Enter Longitude</label>         
+        <input class="input" type="text" value="-8.9295" name="long">
+      </div>
+ <div class="field">
+   <label class="label">Enter Jobcategory</label>
+     <div class="select">
+       <select name="jobcategory">
+  <option value="civils">civils</option>
+  <option value="electrical">electrical</option>
+  <option value="service">service</option>
+  </select>
+    </div>
+  </div>
+  <div class="field">
+     <label class="label">Enter Employee</label>
+      <div class="select">
+           <select name="employee">
+        {{#each employees }}
+          <option> {{lastName}},{{firstName}}</option>
+        {{/each}}
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+  <label class="label">Press to Add</label>
+  <button class="button is-warning">Submit</button>
+  </div>
+</form>
+ 
+ 
+ <!-- <form action="/addjob" method="POST">
 
       <div class="field">
-    <label class="label">Enter Jobvalue</label> <input class="input" type="number" placeholder="Euros" name="jobvalue">
+    <label class="label">Enter Jobvalue</label><input class="input" type="number" placeholder="Euros" name="jobvalue">
   </div>
   <div class="field">
     <div class="control">
@@ -29,4 +71,5 @@
       <button class="button is-warning">Add a new job</button>
     </div>
   </div>
-</form>
+</form> -->
+
