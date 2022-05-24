@@ -13,7 +13,7 @@ export const whereaboutsController = {
       const whereabouts = await db.whereaboutStore.getAllWhereabouts();
       let total = 0;
       whereabouts.forEach((whereabout) => {
-        total += whereabout.amount;
+        total += whereabout.jobvalue;
       });
       return h.view("Report", {
         title: "Whereabouts to Date",
