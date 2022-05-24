@@ -22,17 +22,17 @@ export const seedData = {
   },
   employees: {
     _model: "Employee",
-    lisa: {
+    adrian: {
       firstName: "Adrian",
       lastName: "Duggan",
       office: "Clonakilty",
     },
-    donald: {
+    brian: {
       firstName: "Brian",
       lastName: "Nunan",
       office: "Cork",
     },
-    elwood: {
+    peter: {
       firstName: "Peter",
       lastName: "McCarthy",
       office: "Listowel",
@@ -42,20 +42,20 @@ export const seedData = {
   whereabouts: {
     _model: "Whereabout",
     one: {
-      jobvalue: 40,
+      jobvalue: 150,
       jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9055",
       user: "->users.bart",
-      employee: "->employees.lisa",
+      employee: "->employees.peter",
     },
     two: {
-      jobvalue: 90,
+      jobvalue: 360,
       jobcategory: "civils",
       lat: "51.6223",
       long: "-8.9075",
       user: "->users.marge",
-      employee: "->employees.lisa",
+      employee: "->employees.adrian",
     },
     three: {
       jobvalue: 430,
@@ -63,23 +63,23 @@ export const seedData = {
       lat: "51.6243",
       long: "-8.9095",
       user: "->users.homer",
-      employee: "->employees.donald",
+      employee: "->employees.brian",
     },
     four: {
       jobvalue: 123,
-      jobcategory: "electrical",
+      jobcategory: "service",
       lat: "51.6263",
       long: "-8.9115",
       user: "->users.homer",
-      employee: "->employees.elwood",
+      employee: "->employees.peter",
     },
     five: {
-      jobvalue: 123,
+      jobvalue: 323,
       jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9295",
       user: "->users.homer",
-      employee: "->employees.elwood",
+      employee: "->employees.adrian",
     },
   },
 };

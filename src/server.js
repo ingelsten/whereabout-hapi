@@ -29,8 +29,7 @@ async function init() {
     routes: { cors: true },
   });
 
-
-  
+ 
   await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
