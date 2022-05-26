@@ -41,7 +41,7 @@ This is an assignment project at Waterford Institute of Technology (WIT) as an i
 * Back End (e.g. hapi, joi, moongose)
 * Infrastructure (e.g. mongo, heroku)
 
-This is the initial core version, Placemark Service V1, of the project. Core features impletemed and selected features and structure added.
+This is a variation of the initial core version, Placemark Service V1, of the project. Core features impletmented and selected features and structure added.
 
 ### Built With
 
