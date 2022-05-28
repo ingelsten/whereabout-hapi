@@ -19,6 +19,12 @@ export const seedData = {
       email: "bart@simpson.com",
       password: "$2a$10$uqnPlgyVjBEOtcgMhn/WRO3FwW4T9gX36tTB4RqpGeB/LkCR3YQuO",
     },
+    anders: {
+      firstName: "Anders",
+      lastName: "Ingelsten",
+      email: "aingelsten@mainline.ie",
+      password: "1234",
+    },
   },
   employees: {
     _model: "Employee",
@@ -46,7 +52,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9055",
-      user: "->users.bart",
+      user: "->users.anders",
       employee: "->employees.peter",
     },
     two: {
@@ -54,7 +60,7 @@ export const seedData = {
       jobcategory: "civils",
       lat: "51.6223",
       long: "-8.9075",
-      user: "->users.marge",
+      user: "->users.anders",
       employee: "->employees.adrian",
     },
     three: {
@@ -62,7 +68,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6243",
       long: "-8.9095",
-      user: "->users.homer",
+      user: "->users.anders",
       employee: "->employees.brian",
     },
     four: {
@@ -70,7 +76,7 @@ export const seedData = {
       jobcategory: "service",
       lat: "51.6263",
       long: "-8.9115",
-      user: "->users.homer",
+      user: "->users.anders",
       employee: "->employees.peter",
     },
     five: {
@@ -78,7 +84,7 @@ export const seedData = {
       jobcategory: "electrical",
       lat: "51.6203",
       long: "-8.9295",
-      user: "->users.homer",
+      user: "->users.anders",
       employee: "->employees.adrian",
     },
   },
