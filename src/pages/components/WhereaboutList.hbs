@@ -4,7 +4,6 @@
     <th>Job Category</th>
     <th>User</th>
     <th>Employee</th>
-    <th>Image</th>
   </thead>
   <tbody>
     {{#each whereabouts}}
@@ -12,9 +11,8 @@
         <td>{{jobvalue}}</td>
         <td>{{jobcategory}}</td>
         <td> {{user.firstName}} {{user.lastName}} </td>
-        <td>{{employee.lastName}}, {{employee.firstName}}</td>
-        <td>{{> whereabout-image }}</td>
-      </tr>
+        <td>{{employee.firstName}} {{employee.lastName}}</td>
+        </tr>
     {{/each}}
   </tbody>
 </table>
