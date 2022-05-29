@@ -18,8 +18,6 @@ export const JobSpec = {
   long: Joi.string().required().regex(/^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,8})?|180(?:\.0{1,8})?)$/),
   description: Joi.string().required()
 };
-//https://stackoverflow.com/questions/19715303/regex-that-accepts-only-numbers-0-9-and-no-characters
-//https://stackoverflow.com/questions/3518504/regular-expression-for-matching-latitude-longitude-coordinates
 
 export const WhereaboutSpec = {
   title: Joi.string().required(),

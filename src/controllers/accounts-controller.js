@@ -1,6 +1,7 @@
-import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 
 import bcrypt from "bcrypt";
+
+import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 
 import { db } from "../models/db.js";
 
@@ -52,8 +53,8 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
-      const passwordsMatch = await bcrypt.compare(password, user.password);    // ADDED
-      if (!user || !passwordsMatch) {                                          // EDITED
+      const passwordsMatch = await bcrypt.compare(password, user.password);    
+      if (!user || !passwordsMatch) {                                          
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id });
