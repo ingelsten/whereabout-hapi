@@ -1,4 +1,5 @@
 import Boom from "@hapi/boom";
+import bcrypt from "bcrypt";
 import { db } from "../models/db.js";
 import { createToken } from "./jwt-utils.js";
 
@@ -39,6 +40,7 @@ export const userApi = {
     handler: async function (request, h) {
       try {
         const user = await db.userStore.addUser(request.payload);
+        user.password = await bcrypt.hash(user.password, saltRounds);  // added
         if (user) {
           return h.response(user).code(201);
         }
@@ -66,19 +68,41 @@ export const userApi = {
   authenticate: {
     auth: false,
     handler: async function (request, h) {
-      try {
-        const user = await db.userStore.getUserByEmail(request.payload.email);
-        if (!user) {
-          return Boom.unauthorized("User not found");
-        } else if (user.password !== request.payload.password) {
-          return Boom.unauthorized("Invalid password");
-        } else {
-          const token = createToken(user);
-          return h.response({ success: true, token: token }).code(201);
+        try {
+            const {password} = request.payload;
+            const user = await db.userStore.getUserByEmail(request.payload.email);
+            const passwordsMatch = await bcrypt.compare(password, user.password);
+            if (!user) {
+                return Boom.unauthorized("User not found");
+            }
+            if (!user || !passwordsMatch) {
+                return Boom.unauthorized("Invalid password");
+            }
+            const token = createToken(user);
+            return h.response({success: true, token: token}).code(201);
+        } catch (err) {
+            return Boom.serverUnavailable("Database Error");
         }
-      } catch (err) {
-        return Boom.serverUnavailable("Database Error");
-      }
     },
-  },
+},
 };
+// <!--authenticate: {
+//    auth: false,
+//    handler: async function (request, h) {
+//      try {
+//        const user = await db.userStore.getUserByEmail(request.payload.email);
+//        if (!user) {
+//          return Boom.unauthorized("User not found");
+//        } else if (user.password !== request.payload.password) {
+//          return Boom.unauthorized("Invalid password");
+//        } else {
+//          const token = createToken(user);
+//          return h.response({ success: true, token: token }).code(201);
+//        }
+//      } catch (err) {
+//        return Boom.serverUnavailable("Database Error");
+//      }
+//    },
+//  },
+// };
+// -->
