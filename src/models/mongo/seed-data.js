@@ -5,13 +5,13 @@ export const seedData = {
       firstName: "Homer",
       lastName: "Simpson",
       email: "homer@simpson.com",
-      password: "secret",
+      password: "$2a$10$HnapEWWKQQ0.0Ft33nXxtuJ0fsmd9ywYswEzT4C.6Ul5y6cOU.UEa",
     },
     marge: {
       firstName: "Marge",
       lastName: "Simpson",
       email: "marge@simpson.com",
-      password: "secret",
+      password: "$2a$10$D3TWK8MSAh63Lhk4gIFSJ.ekM368J88qJRUYSbuBfzffex6B0dFwK",
     },
     bart: {
       firstName: "Bart",
@@ -23,7 +23,7 @@ export const seedData = {
       firstName: "Anders",
       lastName: "Ingelsten",
       email: "aingelsten@mainline.ie",
-      password: "1234",
+      password: "$2a$10$pQBC.a4IWq8a2hBbr1IPM./yUtVdhqT4G7hSZMjZ9Kwldf4tcxcei",
     },
   },
   employees: {
