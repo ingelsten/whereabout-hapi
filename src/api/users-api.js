@@ -3,6 +3,8 @@ import bcrypt from "bcrypt";
 import { db } from "../models/db.js";
 import { createToken } from "./jwt-utils.js";
 
+const saltRounds = 10;   
+
 export const userApi = {
   find: {
     auth: {
