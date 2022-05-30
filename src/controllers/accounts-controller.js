@@ -32,7 +32,7 @@ export const accountsController = {
       const user = request.payload;
       user.password = await bcrypt.hash(user.password, saltRounds);    
       await db.userStore.addUser(user);
-      return h.redirect("/");
+      return h.redirect("/login");
     },
   },
   showLogin: {
