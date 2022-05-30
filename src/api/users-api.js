@@ -39,8 +39,9 @@ export const userApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const user = await db.userStore.addUser(request.payload);
+        const user = request.payload;
         user.password = await bcrypt.hash(user.password, saltRounds);  // added
+        await db.userStore.addUser(user);
         if (user) {
           return h.response(user).code(201);
         }
@@ -50,6 +51,7 @@ export const userApi = {
       }
     },
   },
+
 
   deleteAll: {
     auth: {
