@@ -52,7 +52,7 @@ export const userApi = {
     },
   },
 
-  //signup:{
+  // signup:{
   //  auth: false,
   //  validate: {
   //    payload: UserSpec,
