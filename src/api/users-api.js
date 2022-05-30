@@ -40,8 +40,8 @@ export const userApi = {
     handler: async function (request, h) {
       try {
         const user = request.payload;
-        user.password = await bcrypt.hash(user.password, saltRounds);  // added
-        await db.userStore.addUser(user);
+      user.password = await bcrypt.hash(user.password, saltRounds);    
+      await db.userStore.addUser(user);
         if (user) {
           return h.response(user).code(201);
         }
@@ -52,6 +52,21 @@ export const userApi = {
     },
   },
 
+  //signup:{
+  //  auth: false,
+  //  validate: {
+  //    payload: UserSpec,
+  //    failAction: function (request, h, error) {
+  //      return h.view("Signup", { title: "Sign up error", errors: error.details }).takeover().code(400);
+  //    },
+  //  },
+  //  handler: async function (request, h) {
+ //     const user = request.payload;
+ //     user.password = await bcrypt.hash(user.password, saltRounds);    
+ //     await db.userStore.addUser(user);
+ //     return h.redirect("/");
+ //   },
+ // },
 
   deleteAll: {
     auth: {
